@@ -1,0 +1,28 @@
+{
+  "_about": "Crop families for rotation scoring. Covers the 22 model crops plus common Indian crops a farmer may log in their crop history (wheat, sugarcane, mustard, ...). 'perennial' crops occupy the field for years, so rotation rules do not apply to them.",
+  "families": {
+    "rice": "cereal", "maize": "cereal", "wheat": "cereal", "barley": "cereal", "sorghum": "cereal",
+    "jowar": "cereal", "bajra": "cereal", "pearlmillet": "cereal", "ragi": "cereal", "fingermillet": "cereal", "paddy": "cereal",
+    "chickpea": "legume", "kidneybeans": "legume", "pigeonpeas": "legume", "mothbeans": "legume",
+    "mungbean": "legume", "blackgram": "legume", "lentil": "legume", "soybean": "legume",
+    "groundnut": "legume", "peas": "legume", "chana": "legume", "arhar": "legume", "tur": "legume",
+    "moong": "legume", "urad": "legume", "masoor": "legume", "rajma": "legume",
+    "cotton": "fibre", "jute": "fibre",
+    "mustard": "oilseed", "sunflower": "oilseed", "sesame": "oilseed",
+    "watermelon": "cucurbit", "muskmelon": "cucurbit",
+    "sugarcane": "cash", "potato": "vegetable", "onion": "vegetable", "tomato": "vegetable",
+    "pomegranate": "perennial", "banana": "perennial", "mango": "perennial", "grapes": "perennial",
+    "apple": "perennial", "orange": "perennial", "papaya": "perennial", "coconut": "perennial",
+    "coffee": "perennial"
+  },
+  "scoring": {
+    "same_as_last_season": 0.0,
+    "repeated_recently": 0.4,
+    "legume_after_non_legume": 1.0,
+    "different_family": 0.8,
+    "same_family": 0.5,
+    "no_history": 0.5,
+    "perennial": 0.5
+  },
+  "recent_seasons": 3
+}

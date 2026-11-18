@@ -1,0 +1,21 @@
+# --- API ---
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.30
+pydantic>=2.7,<3
+pydantic-settings>=2.3
+python-multipart>=0.0.9
+
+# --- ML (crop / fertilizer) ---
+scikit-learn>=1.5,<1.8
+pandas>=2.2
+numpy>=1.26,<2.2
+joblib>=1.4
+
+# --- Disease detection ---
+Pillow>=10.3
+# TensorFlow is large (~400 MB) and only needed for the disease model.
+# It lives in requirements-tf.txt so the rest of the service runs without it.
+
+# --- Testing ---
+pytest>=8.2
+httpx>=0.27

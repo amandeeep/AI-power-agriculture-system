@@ -1,0 +1,21 @@
+{
+  "name": "agri-dss",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "AI-Powered Agriculture Decision Support System (MERN + Python ML + Gemini)",
+  "scripts": {
+    "start": "node scripts/start-all.js",
+    "dev": "concurrently -k -n ML,API,WEB -c magenta,blue,green \"npm:dev:ml\" \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:ml": "node scripts/run-ml.js",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "health": "node scripts/health-check.js",
+    "setup": "node scripts/setup.js",
+    "pack": "node scripts/pack.js"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}

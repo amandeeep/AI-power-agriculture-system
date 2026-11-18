@@ -1,0 +1,5 @@
+# Extra packages for running notebooks 01/02 locally (03 runs on Colab).
+-r requirements.txt
+jupyter>=1.0
+matplotlib>=3.8
+seaborn>=0.13

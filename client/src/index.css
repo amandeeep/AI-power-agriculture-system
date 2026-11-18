@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Krishi Mitra theme ("sunlit field"): brand greens, a soil-brown accent, deep green-black ink on pale mint.
+   Used as bg-brand-700, text-ink, border-line, font-display, etc. Approved design: Agri-DSS UI Screens canvas. */
+@theme {
+  --color-brand-50: #f0fdf4;
+  --color-brand-100: #dcfce7;
+  --color-brand-200: #bbf7d0;
+  --color-brand-300: #86efac;
+  --color-brand-500: #22c55e;
+  --color-brand-600: #16a34a;
+  --color-brand-700: #15803d; /* primary buttons: 5:1 with white text */
+  --color-brand-800: #166534;
+  --color-brand-900: #14532d; /* app bar, dark sections */
+  --color-brand-950: #0f2418; /* footer */
+
+  --color-soil-50: #fef3c7;
+  --color-soil-500: #a16207; /* eyebrow labels: 4.9:1 on white */
+  --color-soil-800: #854d0e;
+
+  --color-ink: #10261b;        /* body text */
+  --color-ink-soft: #3d5045;   /* secondary text: 8:1 on white */
+  --color-ink-muted: #4b5b52;  /* captions: 6.6:1 on white */
+  --color-mint: #f6faf5;       /* page background */
+  --color-line: #e3ece4;       /* card borders */
+  --color-line-strong: #b9cdbd;/* input borders */
+
+  /* Noto Sans covers Latin; the Indic families render Hindi, Telugu, Tamil and Kannada. */
+  --font-sans: "Noto Sans", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Tamil", "Noto Sans Kannada", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Noto Sans Devanagari", "Noto Sans Telugu", "Noto Sans Tamil", "Noto Sans Kannada", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { @apply bg-mint font-sans text-ink antialiased; min-width: 320px; }
+  h1, h2, h3 { @apply font-display; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}

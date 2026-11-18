@@ -1,0 +1,134 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "thinkingLevel": "minimal",
+  "generatedAt": "2026-11-12T05:55:46.000Z",
+  "conversations": [
+    {
+      "label": "1. Hindi: crop recommendation",
+      "language": "hi",
+      "user": "मेरे खेत की मिट्टी जांच: N 90, P 42, K 43, pH 6.5. इस मौसम में कौन सी फसल लगाऊं?",
+      "image": false,
+      "status": 200,
+      "ms": 7286,
+      "mode": "ai",
+      "tools": [
+        "recommendCrop({\"ph\":6.5,\"N\":90,\"P\":42,\"K\":43})"
+      ],
+      "toolErrors": [],
+      "reply": "नमस्ते! आपकी मिट्टी की जांच के आधार पर, इस रबी (Rabi) मौसम के लिए सबसे उपयुक्त फसलें नीचे दी गई हैं:\n\n1. **पपीता (Papaya):** स्कोर 0.30 (मिट्टी अनुकूलता: 0.02, मौसम फिट: 1.0, जलवायु फिट: 0.46)\n2. **अंगूर (Grapes):** स्कोर 0.28 (मिट्टी अनुकूलता: 0.01, मौसम फिट: 1.0, जलवायु फिट: 0.33)\n3. **मसूर (Lentil):** स्कोर 0.27 (मिट्टी अनुकूलता: 0.02, मौसम फिट: 1.0, जलवायु फिट: 0.28)\n4. **मक्का (Maize):** स्कोर 0.24 (मिट्टी अनुकूलता: 0.03, मौसम फिट: 1.0, जलवायु फिट: 0.10)\n\n*नोट: खरबूजा (Muskmelon) का स्कोर सबसे अधिक है, लेकिन यह रबी की फसल नहीं है, इसलिए इसे अभी न लगाएं।*\n\n**अगले कदम:**\n1. अपनी पसंद की फसल चुनें और मुझे बताएं ताकि मैं खाद की सही मात्रा बता सकूं।\n2. बुवाई से पहले खेत की अच्छी तरह जुताई करें।\n3. किसी भी खाद या कीटनाशक का उपयोग करने से पहले लेबल जरूर पढ़ें, दस्ताने और मास्क पहनें, और अपने नजदीकी कृषि विज्ञान केंद्र से सलाह लें।",
+      "sessionId": "6af5546f36298a6aae2b9d96",
+      "note": "final run after the invented-value guard and service-unavailable hint"
+    },
+    {
+      "label": "2a. English: missing pH",
+      "language": "en",
+      "user": "Which crop should I grow? My soil has N 20, P 67, K 20.",
+      "image": false,
+      "status": 200,
+      "ms": 2504,
+      "mode": "ai",
+      "tools": [
+        "recommendCrop({\"ph\":7,\"N\":20,\"P\":67,\"K\":20})"
+      ],
+      "toolErrors": [
+        "recommendCrop: missing_values"
+      ],
+      "reply": "Namaste! To give you the best advice for your field in Hyderabad, I need one more detail. Could you please tell me the **pH value** of your soil? \n\nOnce I have that, I can accurately recommend the best crops for you.",
+      "sessionId": "6af5548a36298a6aae2b9d9a",
+      "note": "final run after the invented-value guard and service-unavailable hint"
+    },
+    {
+      "label": "2b. English: follow-up with pH",
+      "language": "en",
+      "user": "The pH is 7.",
+      "image": false,
+      "status": 200,
+      "ms": 5192,
+      "mode": "ai",
+      "tools": [
+        "recommendCrop({\"N\":20,\"K\":20,\"P\":67,\"ph\":7})"
+      ],
+      "toolErrors": [],
+      "reply": "Based on your soil test (N: 20, P: 67, K: 20, pH: 7), here are the recommended crops for your field in Hyderabad:\n\n1. **Lentil (Masoor):** Score 0.2918. This is a good choice for the current Rabi season.\n2. **Papaya:** Score 0.305. It grows well in all seasons, though the overall score is lower due to soil-crop match.\n3. **Grapes:** Score 0.2776. Suitable for the current Rabi season.\n4. **Maize (Makka):** Score 0.2331. Suitable for the current Rabi season.\n5. **Muskmelon:** Score 0.3952. *Caution:* This is typically a Zaid (summer) crop and may not perform well if planted now.\n\n**Why these results?**\nYour soil is high in Phosphorus (P) but low in Nitrogen (N) and Potassium (K). The scores reflect how well each crop matches your soil nutrients, the current Rabi season, and Hyderabad's current weather.\n\n**Next Steps:**\n1. Choose a crop from the list above based on your local market demand.\n2. Once you select a crop, ask me for a specific fertilizer plan to balance your N, P, and K levels.\n3. Visit your local Krishi Vigyan Kendra (KVK) to confirm these choices for your specific soil type.",
+      "sessionId": "6af5548a36298a6aae2b9d9a",
+      "note": "final run after the invented-value guard and service-unavailable hint"
+    },
+    {
+      "label": "3. Telugu: fertilizer",
+      "language": "te",
+      "user": "నా వరి పొలానికి ఎంత ఎరువు వేయాలి? నేల పరీక్ష: N 40, P 25, K 70.",
+      "image": false,
+      "status": 200,
+      "ms": 3293,
+      "mode": "ai",
+      "tools": [
+        "recommendFertilizer({\"K\":70,\"N\":40,\"P\":25,\"crop\":\"rice\"})"
+      ],
+      "toolErrors": [],
+      "reply": "నమస్కారం! మీ వరి పొలానికి ఎరువుల వివరాలు ఇక్కడ ఉన్నాయి:\n\nమీ నేలలో నత్రజని (N), భాస్వరం (P) తక్కువగా ఉన్నాయి, కానీ పొటాషియం (K) ఎక్కువగా ఉంది.\n\n**ఎరువుల సూచన (ఎకరాకు):**\n*   **DAP (18-46-0):** 20 కిలోలు. ఇది నాటేటప్పుడు వేరు దగ్గర వేయాలి.\n*   **యూరియా (Urea):** 27 కిలోలు. దీన్ని రెండు లేదా మూడు భాగాలుగా చేసి, మొక్క ఎదుగుదల దశలో వేయండి.\n*   **ముఖ్య గమనిక:** మీ నేలలో పొటాషియం ఎక్కువగా ఉంది, కాబట్టి MOP ఎరువు వేయకండి. ఇది మొక్కలకు హాని చేయవచ్చు.\n\n**సేంద్రియ ఎరువులు:**\n*   మంచిగా కుళ్ళిన పశువుల ఎరువు (FYM) లేదా కంపోస్ట్ ఎకరాకు 2-4 టన్నులు వేయడం చాలా మంచిది.\n\n**జాగ్రత్తలు:**\n*   ఎరువులు వాడేటప్పుడు చేతికి గ్లౌజులు, ముఖానికి మాస్క్ ధరించండి.\n*   ఎరువుల ప్యాకెట్లపై ఉన్న సూచనలను తప్పక చదవండి.\n*   మరింత ఖచ్చితత్వం కోసం మీ దగ్గరలోని కృషి విజ్ఞాన కేంద్రం (KVK) లేదా నేల పరీక్షా కేంద్రాన్ని సంప్రదించండి.\n\n**తదుపరి చర్యలు:**\n1. పైన చెప్పిన మోతాదులో ఎరువులను సిద్ధం చేసుకోండి.\n2. వరిలో ఏవైనా తెగుళ్లు కనిపిస్తే వెంటనే ఫోటో తీసి పంపండి.",
+      "sessionId": "6af5537bd4772376566f038d"
+    },
+    {
+      "label": "4. English: leaf photo",
+      "language": "en",
+      "user": "My tomato leaves have dark patches. What is this?",
+      "image": true,
+      "status": 200,
+      "ms": 3340,
+      "mode": "ai",
+      "tools": [
+        "detectDisease(undefined)"
+      ],
+      "toolErrors": [
+        "detectDisease: service_unavailable"
+      ],
+      "reply": "I am sorry, but my disease detection service is temporarily unavailable.\n\nDark patches on tomato leaves often indicate a fungal infection like Early Blight or Late Blight. These spread quickly in humid conditions.\n\n**General advice:**\n*   Remove and destroy the affected leaves immediately to stop the spread.\n*   Avoid overhead watering; water only at the base of the plant to keep leaves dry.\n*   Ensure good air circulation between plants.\n\n**Next steps:**\n1. Please take a few affected leaves to your local Krishi Vigyan Kendra (KVK) or the nearest agriculture office for an accurate diagnosis.\n2. Do not apply any chemical sprays until you have confirmed the exact disease with an expert.\n3. If you decide to use any recommended treatment later, always wear gloves and a mask, and follow the label instructions carefully.",
+      "sessionId": "6af554ba36298a6aae2b9da2",
+      "note": "final run after the invented-value guard and service-unavailable hint"
+    },
+    {
+      "label": "5. Tamil: weather and sowing",
+      "language": "ta",
+      "user": "இந்த வாரம் மழை வருமா? விதைக்கலாமா?",
+      "image": false,
+      "status": 200,
+      "ms": 8930,
+      "mode": "ai",
+      "tools": [
+        "getWeather({\"location\":\"Hyderabad\"})"
+      ],
+      "toolErrors": [],
+      "reply": "வணக்கம்! ஹைதராபாத்தில் இந்த வாரம் மழை பெய்ய வாய்ப்பு மிகக் குறைவு. வானம் மேகமூட்டத்துடன் காணப்படும்.\n\nவிதைப்பதற்கு முன், உங்கள் மண்ணின் தரம் முக்கியம். உங்கள் நிலத்தின் மண் பரிசோதனை முடிவுகள் (N, P, K மற்றும் pH அளவு) என்னிடம் உள்ளதா?\n\nஅடுத்த கட்டங்கள்:\n1. உங்கள் மண் பரிசோதனை முடிவுகளை என்னிடம் பகிருங்கள்.\n2. நீங்கள் என்ன பயிர் செய்ய நினைக்கிறீர்கள் என்று சொல்லுங்கள்.\n3. மண் பரிசோதனை செய்யவில்லை என்றால், அருகில் உள்ள வேளாண் விரிவாக்க மையத்தை அணுகி மண் மாதிரி கொடுத்து பரிசோதனை செய்யுங்கள்.",
+      "sessionId": "6af553abd4772376566f0394"
+    },
+    {
+      "label": "6. Kannada: FORCED FALLBACK (Gemini timeout)",
+      "language": "kn",
+      "user": "ನನ್ನ ಮಣ್ಣು N 90 P 42 K 43 pH 6.5. ಯಾವ ಬೆಳೆ ಬೆಳೆಯಲಿ?",
+      "image": false,
+      "status": 200,
+      "ms": 2117,
+      "mode": "basic",
+      "fallbackReason": "timeout",
+      "tools": [
+        "recommendCrop({\"N\":90,\"P\":42,\"K\":43,\"ph\":6.5})"
+      ],
+      "toolErrors": [],
+      "reply": "⚠️ ಬೇಸಿಕ್ ಮೋಡ್: AI ಸಹಾಯಕ ಈಗ ಬ್ಯುಸಿಯಾಗಿದೆ, ಆದ್ದರಿಂದ ಇದು ಸರಳ ಸ್ವಯಂಚಾಲಿತ ಉತ್ತರ.\n\nನಿಮ್ಮ ಮಣ್ಣು ಮತ್ತು ಪ್ರಸ್ತುತ ಹಂಗಾಮಿಗೆ ಉತ್ತಮ ಬೆಳೆಗಳು:\n1. muskmelon: ಒಟ್ಟು 52% (ಮಣ್ಣು ಹೊಂದಾಣಿಕೆ 59%, ಹಂಗಾಮು 50%, ಹವಾಮಾನ 33%)\n2. papaya: ಒಟ್ಟು 30% (ಮಣ್ಣು ಹೊಂದಾಣಿಕೆ 2%, ಹಂಗಾಮು 100%, ಹವಾಮಾನ 46%)\n3. grapes: ಒಟ್ಟು 28% (ಮಣ್ಣು ಹೊಂದಾಣಿಕೆ 1%, ಹಂಗಾಮು 100%, ಹವಾಮಾನ 33%)\n4. lentil: ಒಟ್ಟು 27% (ಮಣ್ಣು ಹೊಂದಾಣಿಕೆ 2%, ಹಂಗಾಮು 100%, ಹವಾಮಾನ 28%)\n5. maize: ಒಟ್ಟು 24% (ಮಣ್ಣು ಹೊಂದಾಣಿಕೆ 3%, ಹಂಗಾಮು 100%, ಹವಾಮಾನ 10%)",
+      "sessionId": "6af553c81efcd9c1369efc0d"
+    },
+    {
+      "label": "7. English: off-topic",
+      "language": "en",
+      "user": "Who will win the cricket world cup?",
+      "image": false,
+      "status": 200,
+      "ms": 1900,
+      "mode": "ai",
+      "tools": [],
+      "toolErrors": [],
+      "reply": "I am Krishi Mitra, your agricultural advisor. I focus on farming, crops, and weather to help you grow better harvests. I cannot provide information on cricket or sports.\n\nHow is your farm doing today? If you need help with soil testing, crop selection, or checking the weather for your fields in Hyderabad, please let me know!",
+      "sessionId": "6af553ded4772376566f0397"
+    }
+  ]
+}

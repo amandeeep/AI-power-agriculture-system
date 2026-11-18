@@ -1,0 +1,58 @@
+AGRI-DSS: HOW TO RUN ON A NEW PC (Windows)
+==========================================
+
+STEP 1. Install these two programs (one time only)
+---------------------------------------------------
+  a) Node.js 20 or newer (LTS)  ->  https://nodejs.org
+       Keep all the default options.
+
+  b) Python 3.11               ->  https://www.python.org/downloads/release/python-3119/
+       Scroll down and pick "Windows installer (64-bit)".
+       In the installer, TICK "Add python.exe to PATH" and keep "py launcher" ticked.
+       (3.12 or 3.13 also work. 3.14 does NOT work yet. It is fine to have another Python
+        installed as well.)
+       Or, in PowerShell:   winget install Python.Python.3.11
+
+  After installing, CLOSE and reopen any terminal / File Explorer window.
+
+STEP 2. Unzip
+-------------
+  Right-click the zip -> "Extract All". Use a short path if possible, e.g. D:\agri-dss
+  Do NOT run anything from inside the zip.
+
+STEP 3. Install the dependencies (one time only, needs internet, 10-20 min)
+---------------------------------------------------------------------------
+  Open the agri-dss folder and double-click  setup.bat
+  It does everything by itself:
+    - finds Python 3.11 and creates a fresh ml-service\.venv for THIS PC
+    - installs the Python packages at the exact tested versions (incl. TensorFlow, ~400 MB)
+    - installs the Node packages (root, server, client)
+    - keeps the .env files that came in the zip
+  Wait until it says "Setup finished." and then press a key to close the window.
+  If the download fails halfway, just run setup.bat again. It continues where it stopped.
+
+STEP 4. Run
+-----------
+  Double-click  start.bat
+  Wait until it prints the link, then open it in the browser:   http://localhost:5173
+  Keep that window open while you use the app. Ctrl+C (or closing the window) stops everything.
+  Next time, only STEP 4 is needed.
+
+IF SOMETHING GOES WRONG
+-----------------------
+  "No Python at 'C:\Users\...\python.exe'"  ->  run setup.bat (the venv came from another PC).
+  "No compatible Python found"             ->  install Python 3.11 (step 1b) and rerun setup.bat.
+  "node is not recognized"                 ->  install Node.js (step 1a), then reopen the window.
+  Login / history / chat errors about the database (MongoDB timeout)
+      ->  the MongoDB Atlas cluster must allow this PC's internet IP:
+          Atlas website -> Network Access -> Add IP Address (or "Allow access from anywhere").
+  Port already in use  ->  start.bat moves to a free port by itself and prints the new link.
+  Run start.bat from the agri-dss folder. Do NOT run "node start-all.js" inside the scripts folder.
+
+Manual commands (only if setup.bat cannot be used), in PowerShell inside the agri-dss folder:
+  py -3.11 -m venv ml-service\.venv
+  cd ml-service
+  .venv\Scripts\python -m pip install --default-timeout=60 --retries 10 -r requirements.txt -r requirements-tf.txt -c constraints.txt
+  cd ..
+  npm run install:all
+  npm start

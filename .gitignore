@@ -1,0 +1,40 @@
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Node ---
+node_modules/
+dist/
+coverage/
+*.log
+npm-debug.log*
+
+# --- Python ---
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Datasets (place locally, never commit) ---
+ml-service/data/*
+!ml-service/data/.gitkeep
+
+# --- Large model artifacts ---
+ml-service/models/*
+!ml-service/models/.gitkeep
+*.keras
+*.h5
+*.joblib
+*.pkl
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Generated from the Soil Health Card download (regenerate: py -m training.build_district_soil --download) ---
+ml-service/knowledge/district_soil.json
+ml-service/knowledge/district_boundaries.json

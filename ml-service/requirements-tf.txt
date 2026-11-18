@@ -1,0 +1,4 @@
+# Optional: install to enable /predict/disease locally.
+#   .venv\Scripts\python -m pip install -r requirements-tf.txt
+# TensorFlow 2.16+ bundles Keras 3, which reads the .keras format exported from Colab.
+tensorflow>=2.16,<2.21

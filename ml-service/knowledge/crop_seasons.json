@@ -1,0 +1,39 @@
+{
+  "_about": "Indian cropping seasons and the season(s) each crop is sown/planted in. Used for season_score. Fruit/plantation crops are mapped to their usual planting season.",
+  "seasons": {
+    "Kharif": { "months": [6, 7, 8, 9, 10], "description": "Monsoon season, sown with the onset of rains (June-October)" },
+    "Rabi": { "months": [11, 12, 1, 2], "description": "Winter season, sown after the monsoon (November-February)" },
+    "Zaid": { "months": [3, 4, 5], "description": "Summer season between Rabi and Kharif (March-May)" }
+  },
+  "season_order": ["Kharif", "Rabi", "Zaid"],
+  "scoring": {
+    "current": 1.0,
+    "adjacent": 0.5,
+    "other": 0.0,
+    "adjacent_rule": "the upcoming season (next in season_order), so farmers can prepare land and inputs ahead of sowing"
+  },
+  "crops": {
+    "rice":        { "seasons": ["Kharif"] },
+    "maize":       { "seasons": ["Kharif", "Rabi", "Zaid"] },
+    "chickpea":    { "seasons": ["Rabi"] },
+    "kidneybeans": { "seasons": ["Rabi", "Kharif"] },
+    "pigeonpeas":  { "seasons": ["Kharif"] },
+    "mothbeans":   { "seasons": ["Kharif"] },
+    "mungbean":    { "seasons": ["Kharif", "Zaid"] },
+    "blackgram":   { "seasons": ["Kharif", "Zaid"] },
+    "lentil":      { "seasons": ["Rabi"] },
+    "pomegranate": { "seasons": ["Kharif"] },
+    "banana":      { "seasons": ["Kharif", "Zaid"] },
+    "mango":       { "seasons": ["Kharif"] },
+    "grapes":      { "seasons": ["Rabi"] },
+    "watermelon":  { "seasons": ["Zaid"] },
+    "muskmelon":   { "seasons": ["Zaid"] },
+    "apple":       { "seasons": ["Rabi"] },
+    "orange":      { "seasons": ["Kharif"] },
+    "papaya":      { "seasons": ["Kharif", "Rabi", "Zaid"] },
+    "coconut":     { "seasons": ["Kharif"] },
+    "cotton":      { "seasons": ["Kharif"] },
+    "jute":        { "seasons": ["Kharif", "Zaid"] },
+    "coffee":      { "seasons": ["Kharif"] }
+  }
+}
